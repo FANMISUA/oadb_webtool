@@ -62,7 +62,6 @@ Let's walk through installing PostgreSQL with the postgresapp on Mac.
 1) Download the installer specified by EnterpriseDB for all supported PostgreSQL versions. The installer is available here:
   https://www.postgresql.org/download/windows/
 
----
 
 ### NodeJS
 
@@ -95,35 +94,72 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm install npm -g
 
-###
-##### Yarn installation
+
+### Yarn installation
+
   After installing node, this project will need yarn too, so just run the following command.
 
       $ npm install -g yarn
 
+
 ---
-
-
-### Installation SQL
-
-_Below is an example of how you can install and set up the webtool and database on your local machine._
+<!-- INSTALL STEPS -->
+## Install Steps
+First download the repo.
 
 1. Clone the repo
    ```sh
    git clone [https://github.com/your_username_/Project-Name](https://github.com/FANMISUA/oadb_webtool).git
    ```
-2. Install NPM packages
+   
+### Installation SQL
+
+_Below is an example of how you can install and set up database on your local machine._
+
+2. Create and Connect Database
    ```sh
-   npm install
+   CREATE DATABASE oakdb
+   \C oakdb
    ```
-3. Enter your API in `config.js`
+3. Load SQL scripts to create tables
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   psql -U your_username -d dbname -f create_oadb.sql
+   ```
+   
+4. Load data to tables
+   ```js
+   \copy Chemical FROM '.\FinalChemicalTable.csv' with delimiter as ',' CSV HEADER;
+   \copy Reference FROM '.\FinalReferenceTable.csv' with delimiter as ',' CSV HEADER;
+   \copy Assay FROM '.\FinalAssayTable.csv' with delimiter as ',' CSV HEADER;
+   \copy Data FROM '.\FinalDataTable.csv' with delimiter as ',' CSV HEADER;
    ```
 
-### Installation React
+### Installation React web tool
+_Below is an example of how you can install and set up the webtool and database on your local machine._
 
+5. Install modules for server
+   ```sh
+   cd server
+   yarn add express pg cors
+   ```
 
+6. Install modules for client
+   ```sh
+   cd client
+   yarn add react antd react-router-dom@6 ketcher-react @mui/icons-material @emotion/react @emotion/styled react-highlight-words smiles-drawer
+   ```
+
+7. Run server
+   ```sh
+   cd server
+   nodemon index
+   ```
+   
+8. Run Client
+   ```sh
+   cd client
+   npm run start
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
