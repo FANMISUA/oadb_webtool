@@ -106,12 +106,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 <!-- INSTALL STEPS -->
-## Set up oadb webtool locally Steps
+## Set up oadb webtool Steps
 First download the repo.
 
 1. Clone the repo.
    ```sh
-   git clone [https://github.com/your_username_/Project-Name](https://github.com/FANMISUA/oadb_webtool).git
+   git clone https://github.com/FANMISUA/oadb_webtool.git
    ```
    
 ### Set up local database using PostgreSQL
