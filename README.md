@@ -23,7 +23,8 @@ PostgreSQL version: 13.4
 
 Nodejs version: 16.13.0
 
-##### Install PostgreSQL. 
+
+### Install PostgreSQL
 
 As an open source object-relational database management system, PostgreSQL available for MacOS, Linux, and Windows.
 
@@ -64,7 +65,7 @@ If the installation was successful, you should be able to run the following comm
   
     
     
-### NodeJS
+### Install NodeJS
 
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
 
