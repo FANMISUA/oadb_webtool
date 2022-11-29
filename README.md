@@ -106,15 +106,15 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 <!-- INSTALL STEPS -->
-## Install Steps
+## Set up oadb webtool locally Steps
 First download the repo.
 
-1. Clone the repo
+1. Clone the repo.
    ```sh
    git clone [https://github.com/your_username_/Project-Name](https://github.com/FANMISUA/oadb_webtool).git
    ```
    
-### Installation SQL
+### Set up local database using PostgreSQL
 
 2. Create and Connect Database. 
 
@@ -125,7 +125,7 @@ First download the repo.
    create database scripts screenshot.
    ![psqlinstall1](https://user-images.githubusercontent.com/12943354/204495005-0e5be89f-70e0-4e53-8066-9776338ad6f4.png)
    
-3. Create tables
+3. Create tables.
 
    ```js
    psql -U postgres -d oadb -f 'createTable.sql'
@@ -133,7 +133,7 @@ First download the repo.
    create table scripts screenshot.
    ![psqlinstall2](https://user-images.githubusercontent.com/12943354/204495032-67d5ea37-2f90-43ea-bf7d-a6aca3e00a5c.png)
 
-4. Load data into tables
+4. Load data into tables.
    unzip the csv files to the same place for sql scripts.
    
    ```js
@@ -142,7 +142,7 @@ First download the repo.
    load data scripts screenshot.
    ![psqlinstall3](https://user-images.githubusercontent.com/12943354/204495052-fafb7cb1-3ac9-4cf0-a7c1-aaa80a5b7ed3.png)
 
-5. you can also use the following scripts to load data into to each table seperately.
+   you can also use the following scripts to load data into to each table seperately.
 
    ```js
    \copy Chemical FROM '.\FinalChemicalTable.csv' with delimiter as ',' CSV HEADER;
@@ -152,17 +152,17 @@ First download the repo.
    ```
    
 
-### Installation React web tool
+### set up React web tool using Visual Studio Code
 
 _Below is the example of how you can install and set up the webtool and database on your local machine._
 
-5. Install modules for server
+5. Install modules for server.
    ```sh
    cd server
    yarn add express pg cors
    ```
 
-6. Install modules for client
+6. Install modules for client.
    ```sh
    cd client
    yarn add react antd react-router-dom@6 ketcher-react @mui/icons-material @emotion/react @emotion/styled react-highlight-words smiles-drawer
