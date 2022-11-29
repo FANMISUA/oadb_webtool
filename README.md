@@ -3,11 +3,6 @@
 # oadb_webtool
  webtool to support opioid agonist/antagonist database management. 
 
- PostgreSQL folder: scripts and data for database.
- 
- OADB_Webtool Folder: code for web tool.
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -16,12 +11,17 @@
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+PostgreSQL folder: scripts and data for database.
+OADB_Webtool Folder: code for web tool.
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them. PostgreSQL, NodeJS are required tools.
 
+PostgreSQL version: 13.4
+
+Nodejs version: 16.13.0
 
 ##### Install PostgreSQL. 
 
@@ -52,17 +52,18 @@ Let's walk through installing PostgreSQL with the postgresapp on Mac.
 5) In the command line, enter: `lsof -i tcp:5432`, and ensure that the postgres `COMMAND` appears.
    This checks if the Postgres server is now running on port 5432 under the name `localhost:postgresql`
    
-- ##### Linux:
-
-1) Acquire the source code: `wget ftp://ftp.postgresql.org/pub/source/v9.3.2/postgresql-9.3.2.tar.bz2`
-2) Install the packages needed for building Postgres:
-   `sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev`
-
+   
 - ##### Windows:
 1) Download the installer specified by EnterpriseDB for all supported PostgreSQL versions. The installer is available here:
   https://www.postgresql.org/download/windows/
 
+If the installation was successful, you should be able to run the following command.
 
+    $ postgres -V
+    postgres (PostgreSQL) 13.4
+  
+    
+    
 ### NodeJS
 
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
@@ -85,10 +86,10 @@ Also, be sure to have `git` available in your PATH, `npm` might need it (You can
 If the installation was successful, you should be able to run the following command.
 
     $ node --version
-    v8.11.3
+    16.13.0
 
     $ npm --version
-    6.1.0
+    8.10.0
 
 If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
@@ -114,28 +115,38 @@ First download the repo.
    
 ### Installation SQL
 
-_Below is an example of how you can install and set up database on your local machine._
+2. Create and Connect Database. 
 
-2. Create and Connect Database
+   Change the path to your sql script absolute path.
    ```sh
-   CREATE DATABASE oakdb
-   \C oakdb
+   psql -U postgres  -f 'C:/temp/data/test_oadb/createDatabase.sql'
    ```
-3. Load SQL scripts to create tables
+3. Create tables
+
    ```js
-   psql -U your_username -d dbname -f create_oadb.sql
+   psql -U postgres -d oadb -f 'createTable.sql'
    ```
    
-4. Load data to tables
+4. Load data into tables
+   unzip the csv files to the same place for sql scripts.
+   
+   ```js
+   psql -U postgres -d oadb -f 'loadData.sql
+   ```   
+   
+5. you can also use the following scripts to load data into to each table seperately.
+
    ```js
    \copy Chemical FROM '.\FinalChemicalTable.csv' with delimiter as ',' CSV HEADER;
    \copy Reference FROM '.\FinalReferenceTable.csv' with delimiter as ',' CSV HEADER;
    \copy Assay FROM '.\FinalAssayTable.csv' with delimiter as ',' CSV HEADER;
    \copy Data FROM '.\FinalDataTable.csv' with delimiter as ',' CSV HEADER;
    ```
+   
 
 ### Installation React web tool
-_Below is an example of how you can install and set up the webtool and database on your local machine._
+
+_Below is the example of how you can install and set up the webtool and database on your local machine._
 
 5. Install modules for server
    ```sh
@@ -167,8 +178,14 @@ _Below is an example of how you can install and set up the webtool and database 
 
 <!-- USAGE EXAMPLES -->
 ## Webtool Frontpage
+##### webtool frontpage screenshot.
+
+![frontpage2](https://user-images.githubusercontent.com/12943354/204484652-573d7572-1713-4d02-96bd-c129c177bfb7.png)
+
+##### webtool searchpage screenshot.
+
 ![frontpage1 (1)](https://user-images.githubusercontent.com/12943354/204484128-dc8fbe28-46f5-48c8-924b-7c153ad164c4.png)
-demo image.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
