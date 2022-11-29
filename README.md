@@ -121,19 +121,26 @@ First download the repo.
    ```sh
    psql -U postgres  -f 'C:/temp/data/test_oadb/createDatabase.sql'
    ```
+   create database scripts screenshot.
+   ![psqlinstall1](https://user-images.githubusercontent.com/12943354/204495005-0e5be89f-70e0-4e53-8066-9776338ad6f4.png)
+   
 3. Create tables
 
    ```js
    psql -U postgres -d oadb -f 'createTable.sql'
    ```
-   
+   create table scripts screenshot.
+   ![psqlinstall2](https://user-images.githubusercontent.com/12943354/204495032-67d5ea37-2f90-43ea-bf7d-a6aca3e00a5c.png)
+
 4. Load data into tables
    unzip the csv files to the same place for sql scripts.
    
    ```js
    psql -U postgres -d oadb -f 'loadData.sql
    ```   
-   
+   load data scripts screenshot.
+   ![psqlinstall3](https://user-images.githubusercontent.com/12943354/204495052-fafb7cb1-3ac9-4cf0-a7c1-aaa80a5b7ed3.png)
+
 5. you can also use the following scripts to load data into to each table seperately.
 
    ```js
@@ -165,12 +172,16 @@ _Below is the example of how you can install and set up the webtool and database
    cd server
    nodemon index
    ```
+   run server script screenshot.
+   ![run server](https://user-images.githubusercontent.com/12943354/204495109-31318718-c268-46ee-9531-7b33bdcaaf09.png)
    
 8. Run Client
    ```sh
    cd client
    npm run start
    ```
+   run client script screenshot.
+   ![run client](https://user-images.githubusercontent.com/12943354/204495136-a65d8345-1d49-4709-8ae9-d1debbbaa503.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
