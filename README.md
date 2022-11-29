@@ -11,13 +11,16 @@
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
+
 PostgreSQL folder: scripts and data for database.
+
 OADB_Webtool Folder: code for web tool.
-To get a local copy up and running follow these steps.
+
+Follow the instructions to install tools and run the scripts to set up the webtool for opioid agonist/antagonist database.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them. PostgreSQL, NodeJS are required tools.
+PostgreSQL, NodeJS are required tools you need to set up the database and webtool and the instructions on how to install them. 
 
 PostgreSQL version: 13.4
 
