@@ -11,19 +11,23 @@
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
+
 PostgreSQL folder: scripts and data for database.
+
 OADB_Webtool Folder: code for web tool.
-To get a local copy up and running follow these steps.
+
+Follow the instructions to install tools and run the scripts to set up the webtool for opioid agonist/antagonist database.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them. PostgreSQL, NodeJS are required tools.
+PostgreSQL, NodeJS are required tools you need to set up the database and webtool and the instructions on how to install them. 
 
 PostgreSQL version: 13.4
 
 Nodejs version: 16.13.0
 
-##### Install PostgreSQL. 
+
+### Install PostgreSQL
 
 As an open source object-relational database management system, PostgreSQL available for MacOS, Linux, and Windows.
 
@@ -64,7 +68,7 @@ If the installation was successful, you should be able to run the following comm
   
     
     
-### NodeJS
+### Install NodeJS
 
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
 
@@ -105,15 +109,15 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 <!-- INSTALL STEPS -->
-## Install Steps
+## Set up oadb webtool Steps
 First download the repo.
 
-1. Clone the repo
+1. Clone the repo.
    ```sh
-   git clone [https://github.com/your_username_/Project-Name](https://github.com/FANMISUA/oadb_webtool).git
+   git clone https://github.com/FANMISUA/oadb_webtool.git
    ```
    
-### Installation SQL
+### Set up local database using PostgreSQL
 
 2. Create and Connect Database. 
 
@@ -121,20 +125,27 @@ First download the repo.
    ```sh
    psql -U postgres  -f 'C:/temp/data/test_oadb/createDatabase.sql'
    ```
-3. Create tables
+   create database scripts screenshot.
+   ![psqlinstall1](https://user-images.githubusercontent.com/12943354/204495005-0e5be89f-70e0-4e53-8066-9776338ad6f4.png)
+   
+3. Create tables.
 
    ```js
    psql -U postgres -d oadb -f 'createTable.sql'
    ```
-   
-4. Load data into tables
+   create table scripts screenshot.
+   ![psqlinstall2](https://user-images.githubusercontent.com/12943354/204495032-67d5ea37-2f90-43ea-bf7d-a6aca3e00a5c.png)
+
+4. Load data into tables.
    unzip the csv files to the same place for sql scripts.
    
    ```js
    psql -U postgres -d oadb -f 'loadData.sql
    ```   
-   
-5. you can also use the following scripts to load data into to each table seperately.
+   load data scripts screenshot.
+   ![psqlinstall3](https://user-images.githubusercontent.com/12943354/204495052-fafb7cb1-3ac9-4cf0-a7c1-aaa80a5b7ed3.png)
+
+   you can also use the following scripts to load data into to each table seperately.
 
    ```js
    \copy Chemical FROM '.\FinalChemicalTable.csv' with delimiter as ',' CSV HEADER;
@@ -144,17 +155,17 @@ First download the repo.
    ```
    
 
-### Installation React web tool
+### set up React web tool using Visual Studio Code
 
 _Below is the example of how you can install and set up the webtool and database on your local machine._
 
-5. Install modules for server
+5. Install modules for server.
    ```sh
    cd server
    yarn add express pg cors
    ```
 
-6. Install modules for client
+6. Install modules for client.
    ```sh
    cd client
    yarn add react antd react-router-dom@6 ketcher-react @mui/icons-material @emotion/react @emotion/styled react-highlight-words smiles-drawer
@@ -165,12 +176,16 @@ _Below is the example of how you can install and set up the webtool and database
    cd server
    nodemon index
    ```
+   run server script screenshot.
+   ![run server](https://user-images.githubusercontent.com/12943354/204495109-31318718-c268-46ee-9531-7b33bdcaaf09.png)
    
 8. Run Client
    ```sh
    cd client
    npm run start
    ```
+   run client script screenshot.
+   ![run client](https://user-images.githubusercontent.com/12943354/204495136-a65d8345-1d49-4709-8ae9-d1debbbaa503.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
