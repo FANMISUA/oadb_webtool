@@ -9,10 +9,11 @@ const Pool = require("pg").Pool
 //   database: "oadb"
 // })
 
+
 //remote server
 const pool = new Pool({
   user: "oak",
-  password: "10.14.0.122",
+  password: "10ja8!j.aYeBaq",
   host: "10.14.0.122",
   port: 5432,
   database: "oak"
